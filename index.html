@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbmheW_zzHBVlz1KgntNp8Lij7EdD9QT_z9w&s" height="50px" width="50px">
+        <h2>Do-it<br><span>RAUSHAN</span></h2>
+      </div>
+      <nav>
+        <h3>Today tasks</h3>
+        <ul class="filters">
+          <li class="pink">Personal</li>
+          <li class="blue">Freelance</li>
+          <li class="yellow">Work</li>
+          <li class="gray">+ Add filter</li>
+        </ul>
+        <h3>Scheduled tasks</h3>
+        <h3>Settings</h3>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <h1>Today main focus<br><span>Design team meeting</span></h1>
+
+      <div class="input-task">
+        <input type="text" id="taskInput" placeholder="What is your next task?" />
+        <input type="datetime-local" id="datetimeInput" />
+        <button id="addBtn">Add Task</button>
+      </div>
+
+      <div class="tasks" id="tasksContainer">
+        <!-- Dynamic tasks will be inserted here -->
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

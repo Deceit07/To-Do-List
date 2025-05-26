@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #a78bfa;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  color: #fff;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  color: #333;
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  border-radius: 50%;
+}
+
+.profile h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.profile span {
+  color: #7c3aed;
+}
+
+nav h3 {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.filters {
+  list-style: none;
+  padding: 0;
+}
+
+.filters li {
+  margin: 5px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pink {
+  color: #ec4899;
+}
+.blue {
+  color: #38bdf8;
+}
+.yellow {
+  color: #facc15;
+}
+.gray {
+  color: #bbb;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.main-content h1 {
+  font-size: 24px;
+}
+
+.main-content h1 span {
+  font-weight: bold;
+  font-size: 28px;
+  display: block;
+}
+
+.input-task {
+  background: #f3e8ff;
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-task input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.input-task .icons span {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.tasks .task {
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tasks .pink {
+  border-left: 6px solid #ec4899;
+}
+
+.tasks .blue {
+  border-left: 6px solid #38bdf8;
+}
+
+.tasks .yellow {
+  border-left: 6px solid #facc15;
+}
+
+.task .time {
+  color: #999;
+  font-size: 14px;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.input-task {
+  background: #f3e8ff;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.input-task input[type="text"],
+.input-task input[type="datetime-local"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.input-task button {
+  padding: 10px 20px;
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
