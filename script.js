@@ -1,45 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const taskInput = document.getElementById("taskInput");
-  const datetimeInput = document.getElementById("datetimeInput");
-  const addBtn = document.getElementById("addBtn");
-  const tasksContainer = document.getElementById("tasksContainer");
+const taskList = document.getElementById("taskList");
+const remainingCount = document.getElementById("remainingCount");
 
-  const tagClasses = ["pink", "blue", "yellow"];
+function addTask() {
+  const taskText = document.getElementById("taskInput").value;
+  const taskTime = document.getElementById("taskTime").value;
 
-  addBtn.addEventListener("click", () => {
-    const taskText = taskInput.value.trim();
-    const datetimeValue = datetimeInput.value;
+  if (taskText.trim() === '') return;
 
-    if (taskText === "" || datetimeValue === "") return;
+  const li = document.createElement("li");
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.onchange = updateCount;
 
-    const taskTime = formatDateTime(datetimeValue);
-    const randomTag = tagClasses[Math.floor(Math.random() * tagClasses.length)];
+  const span = document.createElement("span");
+  span.textContent = taskText;
 
-    const newTask = document.createElement("div");
-    newTask.classList.add("task", randomTag);
+  const dateTimeInfo = document.createElement("div");
+  dateTimeInfo.className = "task-info";
+  dateTimeInfo.textContent = taskTime ? `Due: ${new Date(taskTime).toLocaleString()}` : '';
 
-    newTask.innerHTML = `
-      <span>${taskText}</span>
-      <span class="time">${taskTime}</span>
-    `;
+  const taskLeft = document.createElement("div");
+  taskLeft.className = "task-left";
+  taskLeft.appendChild(span);
+  taskLeft.appendChild(dateTimeInfo);
 
-    newTask.addEventListener("click", () => {
-      newTask.classList.toggle("completed");
-    });
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "\u00D7";
+  deleteBtn.onclick = () => {
+    li.remove();
+    updateCount();
+  };
 
-    tasksContainer.appendChild(newTask);
+  li.appendChild(checkbox);
+  li.appendChild(taskLeft);
+  li.appendChild(deleteBtn);
 
-    taskInput.value = "";
-    datetimeInput.value = "";
+  taskList.appendChild(li);
+
+  document.getElementById("taskInput").value = '';
+  document.getElementById("taskTime").value = '';
+
+  updateCount();
+}
+
+function updateCount() {
+  const allTasks = taskList.querySelectorAll("li");
+  let remaining = 0;
+  allTasks.forEach(task => {
+    if (!task.querySelector("input").checked) {
+      remaining++;
+      task.classList.remove("completed");
+    } else {
+      task.classList.add("completed");
+    }
   });
-
-  function formatDateTime(input) {
-    const date = new Date(input);
-    const hours = date.getHours() % 12 || 12;
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    const ampm = date.getHours() >= 12 ? "pm" : "am";
-    const month = date.toLocaleString('default', { month: 'short' });
-    const day = date.getDate();
-    return `${month} ${day}, ${hours}:${minutes} ${ampm}`;
-  }
-});
+  remainingCount.textContent = `Your remaining todos : ${remaining}`;
+}

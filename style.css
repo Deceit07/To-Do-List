@@ -1,168 +1,85 @@
 body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #a78bfa;
+  padding-top: 40px;
+  background-image: url('https://img.freepik.com/free-photo/desk-workspace-with-various-elements_23-2148043179.jpg?semt=ais_hybrid&w=740');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #3D2C4E;
 }
 
 .container {
-  display: flex;
-  height: 100vh;
-  color: #fff;
-}
-
-.sidebar {
-  width: 250px;
-  background: #fff;
-  color: #333;
+  width: 400px;
+  background-color: rgba(211, 188, 235, 0.92); /* soft lavender with slight transparency */
   padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+input[type="text"], input[type="datetime-local"] {
+  width: calc(100% - 30px);
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #F1EAF7;
+  color: #3D2C4E;
 }
 
-.profile img {
-  border-radius: 50%;
+button {
+  padding: 10px 15px;
+  background-color: #B589D6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.profile h2 {
-  font-size: 16px;
-  margin: 0;
+button:hover {
+  background-color: #A478C9;
 }
 
-.profile span {
-  color: #7c3aed;
-}
-
-nav h3 {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #555;
-}
-
-.filters {
+ul {
   list-style: none;
   padding: 0;
 }
 
-.filters li {
-  margin: 5px 0;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.pink {
-  color: #ec4899;
-}
-.blue {
-  color: #38bdf8;
-}
-.yellow {
-  color: #facc15;
-}
-.gray {
-  color: #bbb;
-}
-
-.main-content {
-  flex: 1;
-  padding: 40px;
-}
-
-.main-content h1 {
-  font-size: 24px;
-}
-
-.main-content h1 span {
-  font-weight: bold;
-  font-size: 28px;
-  display: block;
-}
-
-.input-task {
-  background: #f3e8ff;
-  border-radius: 12px;
-  margin: 20px 0;
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #E3CFF1;
+  border-radius: 8px;
   padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-top: 10px;
 }
 
-.input-task input {
-  border: none;
-  background: transparent;
-  outline: none;
-  width: 100%;
-  font-size: 16px;
-}
-
-.input-task .icons span {
-  margin-left: 10px;
-  font-size: 18px;
-}
-
-.tasks .task {
-  background: white;
-  color: #333;
-  border-radius: 12px;
-  padding: 12px 20px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tasks .pink {
-  border-left: 6px solid #ec4899;
-}
-
-.tasks .blue {
-  border-left: 6px solid #38bdf8;
-}
-
-.tasks .yellow {
-  border-left: 6px solid #facc15;
-}
-
-.task .time {
-  color: #999;
-  font-size: 14px;
-}
-
-.task.completed {
+.completed span {
   text-decoration: line-through;
-  opacity: 0.6;
+  color: #7A678C;
 }
 
-.input-task {
-  background: #f3e8ff;
-  border-radius: 12px;
-  padding: 15px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin: 20px 0;
-  flex-wrap: wrap;
+.task-left {
+  flex-grow: 1;
+  margin-left: 10px;
 }
 
-.input-task input[type="text"],
-.input-task input[type="datetime-local"] {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
+.task-info {
+  font-size: 0.85em;
+  color: #5A4A67;
 }
 
-.input-task button {
-  padding: 10px 20px;
-  background-color: #7c3aed;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+input[type="checkbox"] {
+  accent-color: #B589D6;
+}
+
+p em {
+  display: block;
+  margin-top: 15px;
+  color: #3D2C4E;
 }
